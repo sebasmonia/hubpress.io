@@ -11,7 +11,7 @@
   "urls": {
     "site": "https://sebasmonia.github.io",
     "hubpress": "https://sebasmonia.github.io",
-    "theme": "//sebasmonia.github.io/themes/casper",
+    "theme": "//sebasmonia.github.io/themes/saga",
     "images": "https://sebasmonia.github.io/images"
   },
   "initialisationConfigComponent": {
@@ -32,7 +32,7 @@
     "delay": "",
     "postsPerPage": "",
     "googleAnalytics": "",
-    "disqus": ""
+    "disqus": "https-sebasmonia-github-io"
   },
   "socialnetwork": {
     "email": "",
