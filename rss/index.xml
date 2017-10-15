@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 15 Oct 2017 20:21:57 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 15 Oct 2017 20:50:13 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Why this blog]]></title><description><![CDATA[<div class="paragraph">
+<p>I&#8217;ve toyed with the idea of blogging quite a few times, as a lot of programmers do. So, why this time I&#8217;m really doing it? What gave me the push to get started?</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s not like I didn&#8217;t have things to say, I always do, it&#8217;s just that now I feel I can say things that could be useful to others. After working for 10+ years purely in .NET and other related technologies, I&#8217;ve moved to more open things (Python, Linux).
+But unlike many colleagues who made the jump from MS shops to Python/Ruby/etc. shops, I have NOT moved :) I still have my regular job with Exchange and corporate proxies and TFS-is-my-source-control-sad-smiley.</p>
+</div>
+<div class="paragraph">
+<p>Another reason I think I can contribute to the conversation is that I don&#8217;t hate any of the tools that I&#8217;m leaving behind. A few days ago, I asked a question in r/emacs and someone gave me their condolences for using Visual Studio for so long. And I had to explain that even though I prefer other tools now, I can still appreciate how great of an IDE VS is. Heck if I&#8217;m in a hurry and I haven&#8217;t quite cracked how to get Emacs to play nicely with something I need, I won&#8217;t hesitate to start VS (and wait for a few minutes ;) at least for VS 2013/2015) to finish the job at hand.</p>
+</div>
+<div class="paragraph">
+<p>So in essence, I feel my position is relatively unique/uncommon. I hope I can help others navigate The Neutral Zone, by documenting some of the things I do, how I workaround the differences between Linux and Windows, what worked for me and what didn&#8217;t.
+And hopefully is someone ever reads this I can start getting their tips and together we can make our journey easier!</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ll let the readers decide which group is the Federation and which group is the Romulans in my analogy. I&#8217;m not taking sides :)</p>
+</div>
+<div class="paragraph">
+<p>PS: Since the blog is already up I might also share some more opinionated things, eventually. We&#8217;ll see.</p>
+</div>]]></description><link>https://sebasmonia.github.io/2017/10/15/Why-this-blog.html</link><guid isPermaLink="true">https://sebasmonia.github.io/2017/10/15/Why-this-blog.html</guid><category><![CDATA[First_Post]]></category><category><![CDATA[Meta]]></category><category><![CDATA[Emacs]]></category><category><![CDATA[.NET]]></category><dc:creator><![CDATA[Sebastián Monía]]></dc:creator><pubDate>Sun, 15 Oct 2017 00:00:00 GMT</pubDate></item></channel></rss>
