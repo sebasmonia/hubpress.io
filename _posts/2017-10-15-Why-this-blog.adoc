@@ -1,5 +1,4 @@
 = Why this blog
-:published_at: 2017-10-15
 :hp-tags: First_Post, Meta, Emacs, .NET
 
 I've toyed with the idea of blogging quite a few times, as a lot of programmers do. So, why this time I'm really doing it? What gave me the push to get started?
