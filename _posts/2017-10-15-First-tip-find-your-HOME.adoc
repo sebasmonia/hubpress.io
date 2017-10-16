@@ -5,7 +5,7 @@ I remember when I first started using Python at work (for personal use tools, no
 This felt, at a time, like a stylistic choice from the Python folks to get some configuration done in the simplest way possible while making it cross platform. I can see how implementing registry stuff for Windows is a pain, I also stay away from it as much as I can.
 
 However, when I started using more and more tools that depended on environment variables, I realized that there's a lot more than just %PATH% in life.
-By the time I moved to Linux at home I was already more than comfortable with the idea that something depended on an environment variable.
+By the time I moved my home computer to Linux I was already more than comfortable with the idea that something depended on an environment variable.
 
 == %HOME% is where the bin is
 
