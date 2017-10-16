@@ -9,7 +9,7 @@ But unlike many colleagues who made the jump from MS shops to Python/Ruby/etc. s
 Another reason I think I can contribute to the conversation is that I don't hate any of the tools that I'm leaving behind. A few days ago, I asked a question in r/emacs and someone gave me their condolences for using Visual Studio for so long. And I had to explain that even though I prefer other tools now, I can still appreciate how great of an IDE VS is. Heck if I'm in a hurry and I haven't quite cracked how to get Emacs to play nicely with something I need, I won't hesitate to start VS (and wait for a few minutes ;) at least for VS 2013/2015) to finish the job at hand.
 
 So in essence, I feel my position is relatively unique/uncommon. I hope I can help others navigate The Neutral Zone, by documenting some of the things I do, how I workaround the differences between Linux and Windows, what worked for me and what didn't.
-And hopefully is someone ever reads this I can start getting their tips and together we can make our journey easier!
+And hopefully if someone ever reads this I can start getting their tips and together we can make our journey easier!
 
 I'll let the readers decide which group is the Federation and which group is the Romulans in my analogy. I'm not taking sides :)
 
