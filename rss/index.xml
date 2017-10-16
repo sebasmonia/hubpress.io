@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 15 Oct 2017 21:02:12 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Why this blog]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 16 Oct 2017 16:00:51 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Why this blog]]></title><description><![CDATA[<div class="paragraph">
 <p>I&#8217;ve toyed with the idea of blogging quite a few times, as a lot of programmers do. So, why this time I&#8217;m really doing it? What gave me the push to get started?</p>
 </div>
 <div class="paragraph">
@@ -10,7 +10,7 @@ But unlike many colleagues who made the jump from MS shops to Python/Ruby/etc. s
 </div>
 <div class="paragraph">
 <p>So in essence, I feel my position is relatively unique/uncommon. I hope I can help others navigate The Neutral Zone, by documenting some of the things I do, how I workaround the differences between Linux and Windows, what worked for me and what didn&#8217;t.
-And hopefully is someone ever reads this I can start getting their tips and together we can make our journey easier!</p>
+And hopefully if someone ever reads this I can start getting their tips and together we can make our journey easier!</p>
 </div>
 <div class="paragraph">
 <p>I&#8217;ll let the readers decide which group is the Federation and which group is the Romulans in my analogy. I&#8217;m not taking sides :)</p>
