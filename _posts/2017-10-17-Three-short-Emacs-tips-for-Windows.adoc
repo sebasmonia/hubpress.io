@@ -1,0 +1,12 @@
+= Three short Emacs tips for Windows
+:hp-tags: Emacs, MindTheGap, ShortTips
+
+== Set proxy
+
+If you want to use MELPA, ELPA, etc. you need to configure the proxy in the init file:
+
+[source,elisp]
+(setq url-proxy-services
+   '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+     ("http" . "172.21.131.234:8080")
+     ("https" . "172.21.131.234:8080")))
