@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 16 Oct 2017 16:34:07 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Why this blog]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Oct 2017 18:27:52 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Three short Emacs tips for Windows]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Three small tips for your <code>init.el</code> file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_set_proxy">Set proxy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to use MELPA, ELPA, etc. behind your corporate proxy, you need to configure it in the init file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-elisp" data-lang="elisp">(setq url-proxy-services
+   '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+     ("http" . "10.10.10.10:8080")
+     ("https" . "10.10.10.10:8080")))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A good way to get your proxy (unless the admins are cool and just share it) is to get the .dat file, as explained here: <a href="https://superuser.com/questions/346372/how-do-i-know-what-proxy-server-im-using" class="bare">https://superuser.com/questions/346372/how-do-i-know-what-proxy-server-im-using</a></p>
+</div>
+<div class="paragraph">
+<p>I would also recommended to set the proxy in HTTP_PROXY and HTTPS_PROXY.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utf_8">UTF-8</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Being a native Spanish speaker, sometimes I drop accented characters, like the á in Sebastián</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-elisp" data-lang="elisp">(prefer-coding-system 'utf-8)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The problem seemed to be that the defauls in Emacs and in Windows are different&#8230;&#8203;or something like that. Whatever the case, this single line solved all my encoding problems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dired_launch">Dired-launch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I still deal daily with Excel, Word, Outlook, etc. I did replace 99% of  Windows Explorer with Dired, and one of the small tools that made a difference for me was dired-launch: <a href="https://github.com/thomp/dired-launch" class="bare">https://github.com/thomp/dired-launch</a>
+Basically what dired-launch does is equivalent to <code>start "" file-path</code> in the command prompt.</p>
+</div>
+<div class="paragraph">
+<p>I have it bound to J (shift + j) and C-c j, although I think J is the default binding, and for some reason I added an extra one that I&#8217;m not using?.
+Anyway, for Windows there isn&#8217;t any other configuration required:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-elisp" data-lang="elisp">(dired-launch-enable)
+(global-set-key (kbd "\C-cj") 'dired-jump)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you can launch any type of file from the Dired buffer directly.</p>
+</div>
+</div>
+</div>]]></description><link>https://sebasmonia.github.io/2017/10/17/Three-short-Emacs-tips-for-Windows.html</link><guid isPermaLink="true">https://sebasmonia.github.io/2017/10/17/Three-short-Emacs-tips-for-Windows.html</guid><category><![CDATA[Emacs]]></category><category><![CDATA[MindTheGap]]></category><category><![CDATA[ShortTips]]></category><dc:creator><![CDATA[Sebastián Monía]]></dc:creator><pubDate>Tue, 17 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Why this blog]]></title><description><![CDATA[<div class="paragraph">
 <p>I&#8217;ve toyed with the idea of blogging quite a few times, as a lot of programmers do. So, why this time I&#8217;m really doing it? What gave me the push to get started?</p>
 </div>
 <div class="paragraph">

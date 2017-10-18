@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Three short Emacs tips for Windows</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//sebasmonia.github.io/themes/saga/assets/css/style.css?v=1508351272261" rel="stylesheet" type="text/css">
+    <link href="//sebasmonia.github.io/themes/saga/assets/css/animate.min.css?v=1508351272261" rel="stylesheet" type="text/css">
+    <link href="https://sebasmonia.github.io/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://sebasmonia.github.io/2017/10/17/Three-short-Emacs-tips-for-Windows.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Navigating the Neutral Zone" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Three short Emacs tips for Windows" />
+    <meta property="og:description" content="Three small tips for your init.el file. Set proxy If you want to use MELPA, ELPA, etc. behind your corporate proxy, you need to configure it in the init file: (setq url-proxy-services    &#x27;((&quot;no_proxy&quot; . &quot;^\\(localhost\\|10.*\\)&quot;)      (&quot;http&quot; . &quot;10.10.10.10:8080&quot;)      (&quot;https&quot; . &quot;10.10.10.10:8080&quot;" />
+    <meta property="og:url" content="https://sebasmonia.github.io/2017/10/17/Three-short-Emacs-tips-for-Windows.html" />
+    <meta property="article:published_time" content="2017-10-17T00:00:00.000Z" />
+    <meta property="article:tag" content="Emacs" />
+    <meta property="article:tag" content="MindTheGap" />
+    <meta property="article:tag" content="ShortTips" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Three short Emacs tips for Windows" />
+    <meta name="twitter:description" content="Three small tips for your init.el file. Set proxy If you want to use MELPA, ELPA, etc. behind your corporate proxy, you need to configure it in the init file: (setq url-proxy-services    &#x27;((&quot;no_proxy&quot; . &quot;^\\(localhost\\|10.*\\)&quot;)      (&quot;http&quot; . &quot;10.10.10.10:8080&quot;)      (&quot;https&quot; . &quot;10.10.10.10:8080&quot;" />
+    <meta name="twitter:url" content="https://sebasmonia.github.io/2017/10/17/Three-short-Emacs-tips-for-Windows.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Navigating the Neutral Zone",
+    "author": {
+        "@type": "Person",
+        "name": "Sebastián Monía",
+        "image": "https://avatars1.githubusercontent.com/u/1651857?v=4",
+        "url": "https://sebasmonia.github.io/author/sebasmonia/",
+        "description": "Argentinian lost in the US. A bit of each: .NET, Javascript, Python, SQL. Emacs fan. Transitioning to Linux."
+    },
+    "headline": "Three short Emacs tips for Windows",
+    "url": "https://sebasmonia.github.io/2017/10/17/Three-short-Emacs-tips-for-Windows.html",
+    "datePublished": "2017-10-17T00:00:00.000Z",
+    "keywords": "Emacs, MindTheGap, ShortTips",
+    "description": "Three small tips for your init.el file. Set proxy If you want to use MELPA, ELPA, etc. behind your corporate proxy, you need to configure it in the init file: (setq url-proxy-services    &#x27;((&quot;no_proxy&quot; . &quot;^\\\\(localhost\\\\|10.*\\\\)&quot;)      (&quot;http&quot; . &quot;10.10.10.10:8080&quot;)      (&quot;https&quot; . &quot;10.10.10.10:8080&quot;"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Navigating the Neutral Zone" href="https://sebasmonia.github.io/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+    
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+<body class="post-template tag-Emacs tag-Mind-The-Gap tag-Short-Tips">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://sebasmonia.github.io">Navigating the Neutral Zone</a>
+        <span class="blog-description">Stories from the neutral zone, right in between the corporate and the free software worlds. </span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Three short Emacs tips for Windows</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1508220000" datetime="2017-10-17T00:00" title="17 October 2017">2 days ago</time></span>
+            <span class="tags animated fadeInUp"><i class="fa fa-tags"></i> <a href="https://sebasmonia.github.io/tag/Emacs/">Emacs</a>, <a href="https://sebasmonia.github.io/tag/Mind-The-Gap/">MindTheGap</a>, <a href="https://sebasmonia.github.io/tag/Short-Tips/">ShortTips</a></span>
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://sebasmonia.github.io/author/sebasmonia/">Sebastián Monía</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post tag-Emacs tag-Mind-The-Gap tag-Short-Tips">
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Three small tips for your <code>init.el</code> file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_set_proxy">Set proxy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to use MELPA, ELPA, etc. behind your corporate proxy, you need to configure it in the init file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-elisp" data-lang="elisp">(setq url-proxy-services
+   '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+     ("http" . "10.10.10.10:8080")
+     ("https" . "10.10.10.10:8080")))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A good way to get your proxy (unless the admins are cool and just share it) is to get the .dat file, as explained here: <a href="https://superuser.com/questions/346372/how-do-i-know-what-proxy-server-im-using" class="bare">https://superuser.com/questions/346372/how-do-i-know-what-proxy-server-im-using</a></p>
+</div>
+<div class="paragraph">
+<p>I would also recommended to set the proxy in HTTP_PROXY and HTTPS_PROXY.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utf_8">UTF-8</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Being a native Spanish speaker, sometimes I drop accented characters, like the á in Sebastián</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-elisp" data-lang="elisp">(prefer-coding-system 'utf-8)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The problem seemed to be that the defauls in Emacs and in Windows are different&#8230;&#8203;or something like that. Whatever the case, this single line solved all my encoding problems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dired_launch">Dired-launch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I still deal daily with Excel, Word, Outlook, etc. I did replace 99% of  Windows Explorer with Dired, and one of the small tools that made a difference for me was dired-launch: <a href="https://github.com/thomp/dired-launch" class="bare">https://github.com/thomp/dired-launch</a>
+Basically what dired-launch does is equivalent to <code>start "" file-path</code> in the command prompt.</p>
+</div>
+<div class="paragraph">
+<p>I have it bound to J (shift + j) and C-c j, although I think J is the default binding, and for some reason I added an extra one that I&#8217;m not using?.
+Anyway, for Windows there isn&#8217;t any other configuration required:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-elisp" data-lang="elisp">(dired-launch-enable)
+(global-set-key (kbd "\C-cj") 'dired-jump)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you can launch any type of file from the Dired buffer directly.</p>
+</div>
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'https-sebasmonia-github-io'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">Navigating the Neutral Zone</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+    <script src="//sebasmonia.github.io/themes/saga/assets/js/scripts.js?v=1508351272261"></script>
+    
+</body>
+</html>
