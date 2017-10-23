@@ -1,8 +1,8 @@
-= First tip: find your %HOME%
+= Find your %HOME%
 :hp-tags: MindTheGap, ConfigurationTips
 
 I remember when I first started using Python at work (for personal use tools, nothing I could share with anyone _*cofcof*at least officially*cofcof*_) I quickly found out that I needed to configure some environment variables for things to work smoothly.
-This felt, at a time, like a stylistic choice from the Python folks to get some configuration done in the simplest way possible while making it cross platform. I can see how implementing registry stuff for Windows is a pain, I also stay away from it as much as I can.
+This felt, at a time, like a stylistic choice from the Python folks to get some configuration done in the simplest way possible while making it cross platform. I can see how implementing registry stuff only for Windows would add complexity quickly, checking the platform constantly.
 
 However, when I started using more and more tools that depended on environment variables, I realized that there's a lot more than just %PATH% in life.
 By the time I moved my home computer to Linux I was already more than comfortable with the idea that something depended on an environment variable.
