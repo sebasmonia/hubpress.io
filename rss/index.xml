@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Oct 2017 18:27:52 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Three short Emacs tips for Windows]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 23 Oct 2017 22:10:23 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Three short Emacs tips for Windows]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Three small tips for your <code>init.el</code> file.</p>
@@ -83,4 +83,57 @@ And hopefully if someone ever reads this I can start getting their tips and toge
 </div>
 <div class="paragraph">
 <p>PS: Since the blog is already up I might also share some more opinionated things, eventually. We&#8217;ll see.</p>
-</div>]]></description><link>https://sebasmonia.github.io/2017/10/15/Why-this-blog.html</link><guid isPermaLink="true">https://sebasmonia.github.io/2017/10/15/Why-this-blog.html</guid><category><![CDATA[First_Post]]></category><category><![CDATA[Meta]]></category><category><![CDATA[Emacs]]></category><category><![CDATA[.NET]]></category><dc:creator><![CDATA[Sebastián Monía]]></dc:creator><pubDate>Sun, 15 Oct 2017 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://sebasmonia.github.io/2017/10/15/Why-this-blog.html</link><guid isPermaLink="true">https://sebasmonia.github.io/2017/10/15/Why-this-blog.html</guid><category><![CDATA[First_Post]]></category><category><![CDATA[Meta]]></category><category><![CDATA[Emacs]]></category><category><![CDATA[.NET]]></category><dc:creator><![CDATA[Sebastián Monía]]></dc:creator><pubDate>Sun, 15 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Find your %HOME%]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I remember when I first started using Python at work (for personal use tools, nothing I could share with anyone <em>*cofcof*at least officially*cofcof*</em>) I quickly found out that I needed to configure some environment variables for things to work smoothly.
+This felt, at a time, like a stylistic choice from the Python folks to get some configuration done in the simplest way possible while making it cross platform.</p>
+</div>
+<div class="paragraph">
+<p>However, when I started using more and more tools that depended on environment variables, I realized that there&#8217;s a lot more than just %PATH% in life.
+By the time I moved my home computer to Linux I was already more than comfortable with the idea that something depended on an environment variable.</p>
+</div>
+<div class="paragraph">
+<p>So if you are taking the journey to master Python, Emacs, Vim, etc. and live in a Windows environment, I strongly suggest you select one folder in your hard drive and set it to %HOME%. For Emacs for example, this determines where your config files will live. By default Emacs will do the right thing and put it in your %USERPROFILE% (C:\Users\&lt;username&gt;, but in older versions of Windows it was "Documents and Settings").
+In my case I used "C:\HomeFolder\" which honeslty sounds quite dumb. But you know, cache invalidation and naming things, right? (that&#8217;s one quote worth keeping in mind when starting a new project. And naming folders). It&#8217;s pretty short, quite unique (usually "Ho" &lt;TAB&gt; is enough to get it autocompleted) and no spaces. All good attributes.</p>
+</div>
+<div class="paragraph">
+<p>That&#8217;s where I keep the config for all my tools. Python packages 99% of the time will drop the "dot directories" in there, Emacs as mentioned does the same. The reason for this is that in Linux/Unix, each user in the computer gets their own directory in /home/username, where all the "stuff" (not only config but documents, etc.) will live. In a way, it&#8217;s a combination of (some) registry settings and %USERPROFILE%.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__home_is_where_the_bin_is">%HOME% is where the bin is</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There&#8217;s one more thing I&#8217;ve added to my PATH that is semi-related to my home folder, which we usually don&#8217;t have in Windows but can come in quite handy, and that is a bin folder. Usually in Linux there&#8217;s a bin directory that contains the binaries (or, executables) for your tools. In Windows everything is spread out in the two Program Files folders, but if you start using more command line tools you&#8217;ll quickly realize it&#8217;s better to drop them all in one place.</p>
+</div>
+<div class="paragraph">
+<p>So since these are things I call mostly from the command line I place my magic folder in C:\HomeFolder\cmdbin and for example that&#8217;s where I dropped the excellent GnuWin32/ezwinports utilities (Windows versions of grep, find, etc.). And then I added cmdbin to the PATH so from anywhere in the command line I can easily invoke the tools. By the way I also strongly advice against spaces in either of these directory names. It&#8217;s not that you can&#8217;t have spaces, but dealing with quoting paths all the time gets annoying fast.</p>
+</div>
+<div class="paragraph">
+<p>Speaking of keeping things simple, the reason I didn&#8217;t just install Cygwin, is that I want to stay as much as possible in the "native" Windows world, so I can combine these tools with my older Win32 workflows more easily.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dude_where_s_my_binaries_folder">Dude, where&#8217;s my binaries folder?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One thing to notice, your user profile in many companies is setup in a way that you can login in different computers and have all your settings available.
+I&#8217;ve never quite liked this feature, honestly. It depends (as many things in Windows do) on the app developers playing nicely and doing things The Right Way (which we rarely do&#8230;&#8203;). So if you rely on the profile, you&#8217;ll be dissappointed sooner or later, and on top of that your first login on a different computer can take a while to sync all your files.</p>
+</div>
+<div class="paragraph">
+<p>With the Home folder approach, it&#8217;s definitely up to you to every once in a while to sync your folder between different computers or keep a backup in case your hard drive dies. That&#8217;s the reason I put my bin inside the home folder. Every once in a while (usually when I configured something new and it took me a while to get it working) I zip the entire thing and keep that copy somewhere else.
+It happens rarely enough that it isn&#8217;t a huge pain, and at the same time if I have to move computers (which has already happened) getting my carefully created config up and running again it&#8217;s really straightforward.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_there_s_more">There&#8217;s more</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I also recommended looking around the interwebs for PYTHONPATH, PYTHON, HTTP_PROXY and HTTPS_PROXY. These are as well documented as %HOME%, but unlike the later they are much less opinionated. The first two obviously apply to Python, but the proxy ones affect so many tools that I wonder if they shouldn&#8217;t be set by default&#8230;&#8203;</p>
+</div>
+</div>
+</div>]]></description><link>https://sebasmonia.github.io/2017/10/15/Find-your-HOME.html</link><guid isPermaLink="true">https://sebasmonia.github.io/2017/10/15/Find-your-HOME.html</guid><category><![CDATA[MindTheGap]]></category><category><![CDATA[ConfigurationTips]]></category><dc:creator><![CDATA[Sebastián Monía]]></dc:creator><pubDate>Sun, 15 Oct 2017 00:00:00 GMT</pubDate></item></channel></rss>
