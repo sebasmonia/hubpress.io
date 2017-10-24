@@ -6,12 +6,46 @@
 One of the most useful pieces of configuration I did is almost one of the most contrived.
 So, before taking you on a tour of all the steps, here are the results:
 
-image::https://github.com/sebasmonia/BlogContent/blob/master/OrgToHTMLClipboard.png[It's worth it!]
+image::OrgToHTMLClipboard.png[It's worth it!]
 
 For us Windows corp users, Outlook, Excel, etc. are not going away. Easy ways to transition between these worlds are always valuable.
 The setup described below enables copying content from your org files to any other application by exporting the region as HTML and the putting that in the clipboard. From there, all Office applications are just one paste away!
+I wish I could cite my sources on this, but honestly it's been a while and the whole setup didn't come to life in one go, it was rather a combination of pieces I found in lost of blogs and articles.
 
 == Step 1: Pandoc for org to HTML
+
+You need the super useful http://pandoc.org/ to convert your org files to HTML. I already had this installed as I tend to keep my documents in org-mode and export them to docx using Pandoc.
+
+== Step 2: Utility to copy HTML to clipboard
+
+For this step I have a Python 3 version of the code here: http://code.activestate.com/recipes/474121-getting-html-from-the-windows-clipboard/ with some more modifications so that it takes the input from stdin.
+You can find the modified code in my Emacs configuration repository: http://github.com/sebasmonia/emacs_cfg
+
+This is the magical piece that I was missing for the longest time, since there are loads of tools for Linux and a few for OS X but almost nothing ready to use for Windows. The recipe linked above was a life saver! (and I found it looking for something entirely different)
+
+== Step 3: Elisp glue
+
+I "borrowed" a lot of this code too. It defines a new function that uses shell-command-on-region to pass the selected text to Pandoc, and then we pipe the resulting HTML as input for the script that sends everything to the clipboard. Finally we assign a binding for the new function.
+
+[source,elisp]
+----
+(defun org-formatted-copy (&optional b e)
+  "Export region to HTML, and copy it to the clipboard."
+  (interactive "r")
+  (save-window-excursion
+        (shell-command-on-region
+         b
+         e
+         "pandoc -f org -t html | python c:/HomeFolder/PythonModules/htmlclip.py")) 
+  )
+(global-set-key (kbd "C-M-w") 'org-formatted-copy)
+----
+
+== Step 4: Profit!
+
+Before having this contraption, sometimes for very long or content-heavy emails I used to open an org file and then export it via Pandoc. Now thanks to this quick binding, I can draft small tables, lists, etc. very quickly in my "scribble" file (seen in the screenshot) and then copy the resulting text very quickly to Outlook.
+I can play with org-mode tables and then when I need a bigger tool, quickly export it to Excel with a quick copy paste.
+If any reader has found a way to make this more accesible _in Windows_, please let me know!
 
 
 
