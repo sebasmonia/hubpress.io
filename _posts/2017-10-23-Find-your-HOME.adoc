@@ -1,6 +1,6 @@
 = Find your %HOME%
 :hp-tags: MindTheGap, ConfigurationTips
-:published_at: 2019-01-31
+:published_at: 2017-10-23
 
 I remember when I first started using Python at work (for personal use tools, nothing I could share with anyone _*cofcof*at least officially*cofcof*_) I quickly found out that I needed to configure some environment variables for things to work smoothly.
 This felt, at a time, like a stylistic choice from the Python folks to get some configuration done in the simplest way possible while making it cross platform.
