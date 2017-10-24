@@ -1,0 +1,6 @@
+= Dired to clipboard
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+:published_at: 2019-01-31
+:hp-tags: Emacs, Dired, MindTheGap
+
+Copy a file from Dired to the clipboard to paste in outlook. Or anywhere else.
