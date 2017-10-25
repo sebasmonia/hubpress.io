@@ -3,14 +3,14 @@
 :published_at: 2017-10-27
 :hp-tags: Emacs, org, RubeGoldberg, Windows, Pandoc
 
-One of the most useful pieces of configuration I did is almost one of the most contrived.
+One of the most useful pieces of configuration I did is also one of the most contrived.
 So, before taking you on a tour of all the steps, here are the results:
 
 image::OrgToHTMLClipboard.png[It's worth it!]
 
-For us Windows corp users, Outlook, Excel, etc. are not going away. Easy ways to transition between these worlds are always valuable.
+For us Windows corp users, Outlook, Excel, etc. are not going away. Easy ways to transition between worlds are always valuable.
 The setup described below enables copying content from your org files to any other application by exporting the region as HTML and the putting that in the clipboard. From there, all Office applications are just one paste away!
-I wish I could cite my sources on this, but honestly it's been a while and the whole setup didn't come to life in one go, it was rather a combination of pieces I found in lost of blogs and articles.
+I wish I could cite my sources on this more accurately, but honestly it's been a while and the whole setup didn't come to life in one go. It was rather a combination of pieces I found in a host of blogs and articles.
 
 == Step 1: Pandoc for org to HTML
 
