@@ -1,5 +1,4 @@
 = Org-mode to HTML (yet another take)
-// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 :published_at: 2017-10-27
 :hp-tags: Emacs, org, RubeGoldberg, Windows, Pandoc
 
@@ -18,7 +17,7 @@ You need the super useful http://pandoc.org/ to convert your org files to HTML. 
 
 == Step 2: Utility to copy HTML to clipboard
 
-For this step I have a Python 3 version of the code here: http://code.activestate.com/recipes/474121-getting-html-from-the-windows-clipboard/ with some more modifications so that it takes the input from stdin.
+For this step I have a Python 3 version of this code: http://code.activestate.com/recipes/474121-getting-html-from-the-windows-clipboard/ with some more modifications so that it takes input from stdin.
 You can find the modified code in my Emacs configuration repository: http://github.com/sebasmonia/emacs_cfg
 
 This is the magical piece that I was missing for the longest time, since there are loads of tools for Linux and a few for OS X but almost nothing ready to use for Windows. The recipe linked above was a life saver! (and I found it looking for something entirely different)
@@ -43,8 +42,8 @@ I "borrowed" a lot of this code too. It defines a new function that uses shell-c
 
 == Step 4: Profit!
 
-Before having this contraption, sometimes for very long or content-heavy emails I used to open an org file and then export it via Pandoc. Now thanks to this quick binding, I can draft small tables, lists, etc. very quickly in my "scribble" file (seen in the screenshot) and then copy the resulting text very quickly to Outlook.
-I can play with org-mode tables and then when I need a bigger tool, quickly export it to Excel with a quick copy paste.
+Before having this contraption, sometimes for very long or content-heavy emails I used to open an org file and then export it via Pandoc. Now thanks to this quick binding, I can draft small tables, lists, etc. in my "scribble" file (seen in the screenshot) and then copy the resulting text very quickly to Outlook.
+I can play with org-mode tables and then when I need a bigger tool, export it to Excel with a simple copy paste.
 If any reader has found a way to make this more accesible _in Windows_, please let me know!
 
 
