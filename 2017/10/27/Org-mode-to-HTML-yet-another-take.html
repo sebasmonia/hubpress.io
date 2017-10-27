@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Org-mode to HTML (yet another take)</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//sebasmonia.github.io/themes/saga/assets/css/style.css?v=1509135333894" rel="stylesheet" type="text/css">
+    <link href="//sebasmonia.github.io/themes/saga/assets/css/animate.min.css?v=1509135333894" rel="stylesheet" type="text/css">
+    <link href="https://sebasmonia.github.io/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://sebasmonia.github.io/2017/10/27/Org-mode-to-HTML-yet-another-take.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Navigating the Neutral Zone" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Org-mode to HTML (yet another take)" />
+    <meta property="og:description" content="One of the most useful pieces of configuration I did is also one of the most contrived. So, before taking you on a tour of all the steps, here are the results: For us Windows corp users, Outlook, Excel, etc. are not going away. Easy ways to transition between worlds" />
+    <meta property="og:url" content="https://sebasmonia.github.io/2017/10/27/Org-mode-to-HTML-yet-another-take.html" />
+    <meta property="article:published_time" content="2017-10-27T00:00:00.000Z" />
+    <meta property="article:tag" content="Emacs" />
+    <meta property="article:tag" content="org" />
+    <meta property="article:tag" content="RubeGoldberg" />
+    <meta property="article:tag" content="Windows" />
+    <meta property="article:tag" content="Pandoc" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Org-mode to HTML (yet another take)" />
+    <meta name="twitter:description" content="One of the most useful pieces of configuration I did is also one of the most contrived. So, before taking you on a tour of all the steps, here are the results: For us Windows corp users, Outlook, Excel, etc. are not going away. Easy ways to transition between worlds" />
+    <meta name="twitter:url" content="https://sebasmonia.github.io/2017/10/27/Org-mode-to-HTML-yet-another-take.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Navigating the Neutral Zone",
+    "author": {
+        "@type": "Person",
+        "name": "Sebastián Monía",
+        "image": "https://avatars1.githubusercontent.com/u/1651857?v=4",
+        "url": "https://sebasmonia.github.io/author/sebasmonia/",
+        "description": "Argentinian lost in the US. A bit of each: .NET, Javascript, Python, SQL. Emacs fan. Transitioning to Linux."
+    },
+    "headline": "Org-mode to HTML (yet another take)",
+    "url": "https://sebasmonia.github.io/2017/10/27/Org-mode-to-HTML-yet-another-take.html",
+    "datePublished": "2017-10-27T00:00:00.000Z",
+    "keywords": "Emacs, org, RubeGoldberg, Windows, Pandoc",
+    "description": "One of the most useful pieces of configuration I did is also one of the most contrived. So, before taking you on a tour of all the steps, here are the results: For us Windows corp users, Outlook, Excel, etc. are not going away. Easy ways to transition between worlds"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Navigating the Neutral Zone" href="https://sebasmonia.github.io/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+    
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+<body class="post-template tag-Emacs tag-org tag-Rube-Goldberg tag-Windows tag-Pandoc">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://sebasmonia.github.io">Navigating the Neutral Zone</a>
+        <span class="blog-description">Stories from the neutral zone, right in between the corporate and the free software worlds. </span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Org-mode to HTML (yet another take)</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1509084000" datetime="2017-10-27T00:00" title="27 October 2017">14 hours ago</time></span>
+            <span class="tags animated fadeInUp"><i class="fa fa-tags"></i> <a href="https://sebasmonia.github.io/tag/Emacs/">Emacs</a>, <a href="https://sebasmonia.github.io/tag/org/">org</a>, <a href="https://sebasmonia.github.io/tag/Rube-Goldberg/">RubeGoldberg</a>, <a href="https://sebasmonia.github.io/tag/Windows/">Windows</a>, <a href="https://sebasmonia.github.io/tag/Pandoc/">Pandoc</a></span>
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://sebasmonia.github.io/author/sebasmonia/">Sebastián Monía</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post tag-Emacs tag-org tag-Rube-Goldberg tag-Windows tag-Pandoc">
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the most useful pieces of configuration I did is also one of the most contrived.
+So, before taking you on a tour of all the steps, here are the results:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://sebasmonia.github.io/images/OrgToHTMLClipboard.png" alt="It's worth it!">
+</div>
+</div>
+<div class="paragraph">
+<p>For us Windows corp users, Outlook, Excel, etc. are not going away. Easy ways to transition between worlds are always valuable.
+The setup described below enables copying content from your org files to any other application by exporting the region as HTML and the putting that in the clipboard. From there, all Office applications are just one paste away!
+I wish I could cite my sources on this more accurately, but honestly it&#8217;s been a while and the whole setup didn&#8217;t come to life in one go. It was rather a combination of pieces I found in a host of blogs and articles.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_1_pandoc_for_org_to_html">Step 1: Pandoc for org to HTML</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You need the super useful <a href="http://pandoc.org/" class="bare">http://pandoc.org/</a> to convert your org files to HTML. I already had this installed as I tend to keep my documents in org-mode and export them to docx using Pandoc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_2_utility_to_copy_html_to_clipboard">Step 2: Utility to copy HTML to clipboard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this step I have a Python 3 version of this code: <a href="http://code.activestate.com/recipes/474121-getting-html-from-the-windows-clipboard/" class="bare">http://code.activestate.com/recipes/474121-getting-html-from-the-windows-clipboard/</a> with some more modifications so that it takes input from stdin.
+You can find the modified code in my Emacs configuration repository: <a href="http://github.com/sebasmonia/emacs_cfg" class="bare">http://github.com/sebasmonia/emacs_cfg</a></p>
+</div>
+<div class="paragraph">
+<p>This is the magical piece that I was missing for the longest time, since there are loads of tools for Linux and a few for OS X but almost nothing ready to use for Windows. The recipe linked above was a life saver! (and I found it looking for something entirely different)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_3_elisp_glue">Step 3: Elisp glue</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I "borrowed" a lot of this code too. It defines a new function that uses shell-command-on-region to pass the selected text to Pandoc, and then we pipe the resulting HTML as input for the script that sends everything to the clipboard. Finally we assign a binding for the new function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-elisp" data-lang="elisp">(defun org-formatted-copy (&amp;optional b e)
+  "Export region to HTML, and copy it to the clipboard."
+  (interactive "r")
+  (save-window-excursion
+        (shell-command-on-region
+         b
+         e
+         "pandoc -f org -t html | python c:/HomeFolder/PythonModules/htmlclip.py"))
+  )
+(global-set-key (kbd "C-M-w") 'org-formatted-copy)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_4_profit">Step 4: Profit!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before having this contraption, sometimes for very long or content-heavy emails I used to open an org file and then export it via Pandoc. Now thanks to this quick binding, I can draft small tables, lists, etc. in my "scribble" file (seen in the screenshot) and then copy the resulting text very quickly to Outlook.
+I can play with org-mode tables and then when I need a bigger tool, export it to Excel with a simple copy paste.
+If any reader has found a way to make this more accesible <em>in Windows</em>, please let me know!</p>
+</div>
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'https-sebasmonia-github-io'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">Navigating the Neutral Zone</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+    <script src="//sebasmonia.github.io/themes/saga/assets/js/scripts.js?v=1509135333894"></script>
+    
+</body>
+</html>
