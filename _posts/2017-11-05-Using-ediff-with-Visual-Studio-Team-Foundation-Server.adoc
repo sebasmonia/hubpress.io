@@ -1,0 +1,14 @@
+= Using ediff with Visual Studio/Team Foundation Server
+:published_at: 2017-11-05
+:hp-tags: Emcas, VisualStudio, TFS
+
+There are plenty of posts about configuring alternative diff/merge tools to use with Team Foundation Server. The ones I liked the most are http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/ by Ian Nelson, who shows with nice screenshots HOW to change the TFS tools, and also includes a link to another post that explain exactly the order in which the parameters are passed.
+
+Putting together both I arrived at my current configuration to launch ediff when running compares from TFS:
+
+image::TFSCompare.png
+
+image::TFSMerge.png
+
+
+
