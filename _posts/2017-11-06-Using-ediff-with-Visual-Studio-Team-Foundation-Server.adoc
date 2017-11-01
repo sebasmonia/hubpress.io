@@ -1,5 +1,5 @@
 = Using ediff with Visual Studio/Team Foundation Server
-:published_at: 2017-11-05
+:published_at: 2017-11-06
 :hp-tags: Emcas, VisualStudio, TFS
 
 There are plenty of posts about configuring alternative diff/merge tools to use with Team Foundation Server. The one I liked the most is http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/ by Ian Nelson, who shows with nice screenshots HOW to change the TFS tools, and also includes a link to another post that explains the order in which the parameters are passed.
