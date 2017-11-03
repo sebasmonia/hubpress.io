@@ -1,6 +1,6 @@
 = Using ediff with Visual Studio/Team Foundation Server
-:published_at: 2017-11-06
-:hp-tags: Emcas, VisualStudio, TFS
+:published_at: 2017-11-03
+:hp-tags: Emacs, VisualStudio, TFS
 
 There are plenty of posts about configuring alternative diff/merge tools to use with Team Foundation Server. The one I liked the most is http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/ by Ian Nelson, who shows with nice screenshots HOW to change the TFS tools, and also includes a link to another post that explains the order in which the parameters are passed.
 
@@ -10,7 +10,7 @@ image::TFSCompare.png[Compare]
 
 image::TFSMerge.png[Merge]
 
-The little helper ediff.bat lives in my command line "binaries" folder (so it's part of PATH) and it's contents are pretty straigthforward:
+The little helper ediff.bat lives in my command line "binaries" folder (so it's part of PATH) and its contents are pretty straigthforward:
 
 ----
 @echo off
@@ -39,15 +39,15 @@ goto exit
 :exit
 ----
 
-Dissecting this, at first we have some string replace to escape the paths (\ becomes \\). As per the MSDN blog article, these are already quoted. Then through the -e parameter we can start ediff, for justa compare or merging. The list of entry points are in the Emacs manual.
-You can also find a copy of the batch file in my Emacs configuration repository, but the above is all there is to is.
+Dissecting this, at first we have some string replace to escape the paths (\ becomes \\). As per the MSDN blog article, the paths are already quoted. Then through the -e parameter of emacsclientw we use elisp start ediff, for just a compare or merging. The list of entry points for ediff are in the Emacs manual.
+You can also find a copy of the batch file in my Emacs configuration repository, but the above is all there is to it.
 
 I figure an alternative would be an elisp funcion that you invoke and does the conversion of the strings to paths and then starts ediff. But since I already had some experience with batch files replaces, I just went with this approach.
 
 Bonus! there are two configuration options that make this smoother:
 
 * ediff-highlight-all-diffs: set to t to highlight the char-to-char differences instead of just blocks.
-* ediff-keep-variants: if you set this to nil, when quitting the ediff session you will be prompted to closed the buffers you just compared. 
+* ediff-keep-variants: if you set this to nil, when quitting the ediff session you will be prompted to closed the buffers you just compared.
 
 
 
