@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Using ediff with Visual Studio/Team Foundation Server</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//sebasmonia.github.io/themes/saga/assets/css/style.css?v=1509746383892" rel="stylesheet" type="text/css">
+    <link href="//sebasmonia.github.io/themes/saga/assets/css/animate.min.css?v=1509746383892" rel="stylesheet" type="text/css">
+    <link href="https://sebasmonia.github.io/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://sebasmonia.github.io/2017/11/03/Using-ediff-with-Visual-Studio-Team-Foundation-Server.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Navigating the Neutral Zone" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Using ediff with Visual Studio/Team Foundation Server" />
+    <meta property="og:description" content="There are plenty of posts about configuring alternative diff/merge tools to use with Team Foundation Server. The one I liked the most is http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/ by Ian Nelson, who shows with nice screenshots HOW to change the TFS tools, and also includes a link to another" />
+    <meta property="og:url" content="https://sebasmonia.github.io/2017/11/03/Using-ediff-with-Visual-Studio-Team-Foundation-Server.html" />
+    <meta property="article:published_time" content="2017-11-03T00:00:00.000Z" />
+    <meta property="article:tag" content="Emacs" />
+    <meta property="article:tag" content="VisualStudio" />
+    <meta property="article:tag" content="TFS" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Using ediff with Visual Studio/Team Foundation Server" />
+    <meta name="twitter:description" content="There are plenty of posts about configuring alternative diff/merge tools to use with Team Foundation Server. The one I liked the most is http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/ by Ian Nelson, who shows with nice screenshots HOW to change the TFS tools, and also includes a link to another" />
+    <meta name="twitter:url" content="https://sebasmonia.github.io/2017/11/03/Using-ediff-with-Visual-Studio-Team-Foundation-Server.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Navigating the Neutral Zone",
+    "author": {
+        "@type": "Person",
+        "name": "Sebastián Monía",
+        "image": "https://avatars1.githubusercontent.com/u/1651857?v=4",
+        "url": "https://sebasmonia.github.io/author/sebasmonia/",
+        "description": "Argentinian lost in the US. A bit of each: .NET, Javascript, Python, SQL. Emacs fan. Transitioning to Linux."
+    },
+    "headline": "Using ediff with Visual Studio/Team Foundation Server",
+    "url": "https://sebasmonia.github.io/2017/11/03/Using-ediff-with-Visual-Studio-Team-Foundation-Server.html",
+    "datePublished": "2017-11-03T00:00:00.000Z",
+    "keywords": "Emacs, VisualStudio, TFS",
+    "description": "There are plenty of posts about configuring alternative diff/merge tools to use with Team Foundation Server. The one I liked the most is http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/ by Ian Nelson, who shows with nice screenshots HOW to change the TFS tools, and also includes a link to another"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Navigating the Neutral Zone" href="https://sebasmonia.github.io/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+    
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+<body class="post-template tag-Emacs tag-Visual-Studio tag-TFS">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://sebasmonia.github.io">Navigating the Neutral Zone</a>
+        <span class="blog-description">Stories from the neutral zone, right in between the corporate and the free software worlds. </span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Using ediff with Visual Studio/Team Foundation Server</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1509688800" datetime="2017-11-03T00:00" title="03 November 2017">16 hours ago</time></span>
+            <span class="tags animated fadeInUp"><i class="fa fa-tags"></i> <a href="https://sebasmonia.github.io/tag/Emacs/">Emacs</a>, <a href="https://sebasmonia.github.io/tag/Visual-Studio/">VisualStudio</a>, <a href="https://sebasmonia.github.io/tag/TFS/">TFS</a></span>
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://sebasmonia.github.io/author/sebasmonia/">Sebastián Monía</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post tag-Emacs tag-Visual-Studio tag-TFS">
+        <section class="post-content">
+            <div class="paragraph">
+<p>There are plenty of posts about configuring alternative diff/merge tools to use with Team Foundation Server. The one I liked the most is <a href="http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/" class="bare">http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/</a> by Ian Nelson, who shows with nice screenshots HOW to change the TFS tools, and also includes a link to another post that explains the order in which the parameters are passed.</p>
+</div>
+<div class="paragraph">
+<p>Putting together both posts I arrived at my current configuration to launch ediff when running compares from TFS:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://sebasmonia.github.io/images/TFSCompare.png" alt="Compare">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://sebasmonia.github.io/images/TFSMerge.png" alt="Merge">
+</div>
+</div>
+<div class="paragraph">
+<p>The little helper ediff.bat lives in my command line "binaries" folder (so it&#8217;s part of PATH) and its contents are pretty straigthforward:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>@echo off
+set command=%1
+set original=%2
+set original=%original:\=\\%
+set original=%original:"=\"%
+set modified=%3
+set modified=%modified:\=\\%
+set modified=%modified:"=\"%
+
+:compare
+c:\HomeFolder\emacs\bin\emacsclientw -c -n -e "(ediff-files %original% %modified%)"
+goto exit
+
+:merge
+set ancestor=%4
+set ancestor=%ancestor:\=\\%
+set ancestor=%ancestor:"=\"%
+set output=%5
+set output=%output:\=\\%
+set output=%output:"=\"%
+c:\HomeFolder\emacs\bin\emacsclientw -c -n -e "(ediff-merge-with-ancestor %original% %modified% %ancestor% nil %output%)"
+goto exit
+
+:exit</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dissecting this, at first we have some string replace to escape the paths (\ becomes \\). As per the MSDN blog article, the paths are already quoted. Then through the -e parameter of emacsclientw we use elisp start ediff, for just a compare or merging. The list of entry points for ediff are in the Emacs manual.
+You can also find a copy of the batch file in my Emacs configuration repository, but the above is all there is to it.</p>
+</div>
+<div class="paragraph">
+<p>I figure an alternative would be an elisp funcion that you invoke and does the conversion of the strings to paths and then starts ediff. But since I already had some experience with batch files replaces, I just went with this approach.</p>
+</div>
+<div class="paragraph">
+<p>Bonus! there are two configuration options that make this smoother:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ediff-highlight-all-diffs: set to t to highlight the char-to-char differences instead of just blocks.</p>
+</li>
+<li>
+<p>ediff-keep-variants: if you set this to nil, when quitting the ediff session you will be prompted to closed the buffers you just compared.</p>
+</li>
+</ul>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'https-sebasmonia-github-io'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">Navigating the Neutral Zone</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+    <script src="//sebasmonia.github.io/themes/saga/assets/js/scripts.js?v=1509746383892"></script>
+    
+</body>
+</html>

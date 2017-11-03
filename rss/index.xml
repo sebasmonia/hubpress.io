@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 27 Oct 2017 20:15:33 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Org-mode to HTML (yet another take)]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Navigating the Neutral Zone]]></title><description><![CDATA[Stories from the neutral zone, right in between the corporate and the free software worlds. ]]></description><link>https://sebasmonia.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 03 Nov 2017 21:59:43 GMT</lastBuildDate><atom:link href="https://sebasmonia.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Using ediff with Visual Studio/Team Foundation Server]]></title><description><![CDATA[<div class="paragraph">
+<p>There are plenty of posts about configuring alternative diff/merge tools to use with Team Foundation Server. The one I liked the most is <a href="http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/" class="bare">http://blog.iannelson.systems/tfs-alternative-diff-merge-tools/</a> by Ian Nelson, who shows with nice screenshots HOW to change the TFS tools, and also includes a link to another post that explains the order in which the parameters are passed.</p>
+</div>
+<div class="paragraph">
+<p>Putting together both posts I arrived at my current configuration to launch ediff when running compares from TFS:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://sebasmonia.github.io/images/TFSCompare.png" alt="Compare">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://sebasmonia.github.io/images/TFSMerge.png" alt="Merge">
+</div>
+</div>
+<div class="paragraph">
+<p>The little helper ediff.bat lives in my command line "binaries" folder (so it&#8217;s part of PATH) and its contents are pretty straigthforward:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>@echo off
+set command=%1
+set original=%2
+set original=%original:\=\\%
+set original=%original:"=\"%
+set modified=%3
+set modified=%modified:\=\\%
+set modified=%modified:"=\"%
+
+:compare
+c:\HomeFolder\emacs\bin\emacsclientw -c -n -e "(ediff-files %original% %modified%)"
+goto exit
+
+:merge
+set ancestor=%4
+set ancestor=%ancestor:\=\\%
+set ancestor=%ancestor:"=\"%
+set output=%5
+set output=%output:\=\\%
+set output=%output:"=\"%
+c:\HomeFolder\emacs\bin\emacsclientw -c -n -e "(ediff-merge-with-ancestor %original% %modified% %ancestor% nil %output%)"
+goto exit
+
+:exit</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dissecting this, at first we have some string replace to escape the paths (\ becomes \\). As per the MSDN blog article, the paths are already quoted. Then through the -e parameter of emacsclientw we use elisp start ediff, for just a compare or merging. The list of entry points for ediff are in the Emacs manual.
+You can also find a copy of the batch file in my Emacs configuration repository, but the above is all there is to it.</p>
+</div>
+<div class="paragraph">
+<p>I figure an alternative would be an elisp funcion that you invoke and does the conversion of the strings to paths and then starts ediff. But since I already had some experience with batch files replaces, I just went with this approach.</p>
+</div>
+<div class="paragraph">
+<p>Bonus! there are two configuration options that make this smoother:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ediff-highlight-all-diffs: set to t to highlight the char-to-char differences instead of just blocks.</p>
+</li>
+<li>
+<p>ediff-keep-variants: if you set this to nil, when quitting the ediff session you will be prompted to closed the buffers you just compared.</p>
+</li>
+</ul>
+</div>]]></description><link>https://sebasmonia.github.io/2017/11/03/Using-ediff-with-Visual-Studio-Team-Foundation-Server.html</link><guid isPermaLink="true">https://sebasmonia.github.io/2017/11/03/Using-ediff-with-Visual-Studio-Team-Foundation-Server.html</guid><category><![CDATA[Emacs]]></category><category><![CDATA[VisualStudio]]></category><category><![CDATA[TFS]]></category><dc:creator><![CDATA[Sebastián Monía]]></dc:creator><pubDate>Fri, 03 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Org-mode to HTML (yet another take)]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>One of the most useful pieces of configuration I did is also one of the most contrived.
